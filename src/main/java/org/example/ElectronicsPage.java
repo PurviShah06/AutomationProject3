@@ -3,7 +3,7 @@ package org.example;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class ElectronicsPage extends Utils {
+public class ElectronicsPage extends Utils {//create inheritance between Classes
     private By _clickonCellphoneButton=By.xpath("//li[@class=\"active last\"]/ul[1]/li[2]/a");
     private By _verifyCellphonePageText=By.xpath("//h1[text()=\"Electronics\"]");
     private String _expectedCellPhonePageText ="Electronics";

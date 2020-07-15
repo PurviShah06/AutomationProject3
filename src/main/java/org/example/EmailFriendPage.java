@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class EmailFriendPage extends Utils {
+public class EmailFriendPage extends Utils {//create inheritance between Classes
     private By _verifyEmailAFriendPageText=By.xpath("//input[@id=\"FriendEmail\"]");
     private String _expectedverifyEmailFriendPageText ="FriendEmail";
     private By _FriendMailInput=By.xpath("//input[@id=\"FriendEmail\"]");
@@ -16,10 +16,9 @@ public class EmailFriendPage extends Utils {
     }
 
     public void userReferFriend(){
-        waitUntilElementClickable(By.xpath("//input[@value=\"Email a friend\"]"),140);
+        waitUntilElementClickable(_FriendMailInput,140);
         sendKeyElements(_FriendMailInput,"purvi_mit1@yahoo.co.uk");
-        waituntillElmentVisible(By.xpath("//textarea[@id=\"PersonalMessage\"]"),100);
-        //Sleep1(20);
+        waituntillElmentVisible(_typePersonalMessage,100);
         sendKeyElements(_typePersonalMessage,"Please review for product ");
     }
 

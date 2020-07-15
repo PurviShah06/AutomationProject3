@@ -3,19 +3,19 @@ package org.example;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class ComputerHomePage extends Utils {
-    private By _clickOnDesktopButton=By.xpath("//div[@class=\"header-menu\"]/ul[1]/li[1]/ul[1]/li[1]/a");
+public class ComputerHomePage extends Utils { //create inheritance between Classes
+    //Store locators in variables
+    private By _clickOnDesktopButton=By.xpath("//img[@title =\"Show products in category Desktops\"]");
     private By _verifyDesktopPagetext=By.xpath("/h1[text()=\"Desktops\"]");
     private String _expectedTextofDesktop ="Desktops";
 
-    public void verifyTextonDesktoppage(){
-        Sleep1(3);
-        Assert.assertEquals()
-        System.out.println(_verifyDesktopPagetext);
+    public void verifyTextonDesktoppage(){//void method create
+        Assert.assertEquals(getElement(_verifyDesktopPagetext),_expectedTextofDesktop);//Assert to check Expected mathch to actual
+        System.out.println("Desktops");
     }
     public void clickOnDesktopButton(){
-        waitUntilElementClickable(By.xpath("//div[@class=\"header-menu\"]/ul[1]/li[1]/ul[1]/li[1]/a"),200);
-        Sleep1(5);
-        clickable(_clickOnDesktopButton);
+        waitUntilElementClickable(_clickOnDesktopButton,200);//add Explicite wait
+        Sleep1(6);
+        clickable(_clickOnDesktopButton);//call Clickable method to click on desktop button
     }
 }
