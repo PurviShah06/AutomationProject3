@@ -1,13 +1,14 @@
 package org.example;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITest;
+import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class Utils extends Basepage {
@@ -19,7 +20,7 @@ public class Utils extends Basepage {
             e.printStackTrace();
         }
     }
-    public static void whenClickablemehtodNotWorking(By by) {
+    public  void whenClickablemehtodNotWorking(By by) {
         WebElement element = driver.findElement(by);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
@@ -40,8 +41,15 @@ public class Utils extends Basepage {
     {
         return driver.findElement(by).getText();
     }
+//    public String getElements(By by)
+//    {
+//
+//
+//        return driver.findElement(by).getText();
+//    }
     public  void clickable(By by)
     {
+
         driver.findElement(by).click(); }//Method for Clickable Element
 
     public  void sendKeyElements(By by, String Text1){//Method for Send Text Element
@@ -62,6 +70,18 @@ public class Utils extends Basepage {
     public  void selectDropDownVisibleText(By by, String textvalue){//Method for DropDown box by Visible Text
         Select select=new Select(driver.findElement(by));
         select.selectByVisibleText(textvalue);
+    }
+    public void alertPopHandle(){
+        Alert alert=driver.switchTo().alert();
+        alert.accept();
+    }
+    public void iFrameSwitchTodefaultContent(){//Method for Switch to MainPage of Iframe.
+        driver.switchTo().defaultContent();
+    }
+    public void screenShot(){
+
+
+
     }
 
 }

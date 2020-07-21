@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
   public  void openMainHomePage() {//create method
   browserManager.setBrowser();//call method
  }
+
  @AfterMethod//annotation
   public void closeUrl() {//create method
   browserManager.closeApplication();//call method
