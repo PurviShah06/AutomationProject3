@@ -21,19 +21,19 @@ public class CellPhonesHomePage extends Utils {
     }
 
     public void addItemstoAddtocart(){ // create method
-        waitUntilElementClickable(_clickonAddToCartButton1,100);
+      //  waitUntilElementClickable(_clickonAddToCartButton1,100);
 
         clickable(_clickonAddToCartButton1);//click on add to cart of HTC One
 
-        waitUntilElementClickable(_clickonAddtocartButton2,200);// add Expllicite Wait
+       // waitUntilElementClickable(_clickonAddtocartButton2,200);// add Expllicite Wait
 
         clickable(_clickonAddtocartButton2);//clcik on add to cart of Nokia Lumia
 
-        waitUntilElementClickable(_clickOnCloseRadioButton,200);//Add Explicite Wait for 90Sec until click on close button
+       // waitUntilElementClickable(_clickOnCloseRadioButton,200);//Add Explicite Wait for 90Sec until click on close button
 
         clickable(_clickOnCloseRadioButton);// Clcik on close radio button
 
-        waitUntilElementClickable(_clickonShoppingcartButton,250);//add Explicite wait
+       // waitUntilElementClickable(_clickonShoppingcartButton,250);//add Explicite wait
 
         clickable(_clickonShoppingcartButton);//Click on shopping cart button
     }

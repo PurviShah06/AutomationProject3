@@ -2,6 +2,7 @@ package org.example;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,6 +10,7 @@ import org.testng.ITest;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Utils extends Basepage {
@@ -78,10 +80,18 @@ public class Utils extends Basepage {
     public void iFrameSwitchTodefaultContent(){//Method for Switch to MainPage of Iframe.
         driver.switchTo().defaultContent();
     }
-    public void screenShot(){
 
+
+    public void screenShot(String screenShotName){
+        //method for taking screenshot
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            try {
+                FileHandler.copy(srcFile, new File("src\\test\\ScreenShots" +screenShotName+" .png"));
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }}
 
 
     }
 
-}

@@ -13,7 +13,7 @@ public void verifyRegistrationCompleteText(){
     Assert.assertEquals(getElement(_actualTextofVerifyregistrationcomplete),_ExpectedTextofRegistrationComplete,"Registration NOT Complete");//Assert to check Expected match to actual
 }
     public void clickOnContinueButton(){
-        waitUntilElementClickable(_clickOnContinueButton,100);//add explicit  Wait
+       // waitUntilElementClickable(_clickOnContinueButton,100);//add explicit  Wait
         clickable(_clickOnContinueButton);//call clickable method to click on Continue button
 
     }
